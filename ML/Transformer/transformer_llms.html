@@ -1,0 +1,573 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;600&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,500;0,700;1,500;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url("file:////home/xteca/.config/Typora/themes/");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* @font-face {
+    font-family: 'MaruBuri';
+    font-weight: bold;
+    src: url('file:////home/xteca/.config/Typora/themes/whitey/MaruBuri-Bold.otf') format('opentype');
+} */
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: "IBM Plex Serif", "Maru", "MaruBuri", "Vollkorn", Palatino, Times, serif;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: bold;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: bold;
+/*	font-style: italic; */
+	margin-top: 3em;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Roboto Slab";
+}
+
+h1, 
+h2 {
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "JetBrains Mono", "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+
+</style><title>transformer_llms</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='transformer--llms'><span>Transformer &amp; LLMs</span></h1><p style="text-align:right"><b>Tae-Geun Kim & ChatGPT</b></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#transformer--llms">Transformer &amp; LLMs</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#seq2seq">Seq2Seq</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n54"><a class="md-toc-inner" href="#seq2seq-with-attention">Seq2Seq with Attention</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n118"><a class="md-toc-inner" href="#transformer">Transformer</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n268"><a class="md-toc-inner" href="#llm-history">LLM History</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n474"><a class="md-toc-inner" href="#gpt">GPT</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n381"><a class="md-toc-inner" href="#bert">BERT</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n375"><a class="md-toc-inner" href="#gpt-3">GPT-3</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n484"><a class="md-toc-inner" href="#palm">PaLM</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n700"><a class="md-toc-inner" href="#references">References</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n217"><a class="md-toc-inner" href="#images">Images</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n243"><a class="md-toc-inner" href="#papers">Papers</a></span></p></div><h2 id='seq2seq'><span>Seq2Seq</span></h2><p><img src="img/seq2seq.png" referrerpolicy="no-referrer" alt="Write a Sequence to Sequence (seq2seq) Model — Chainer 7.8.1 documentation"></p><ol start='' ><li><p><strong><span>Published year &amp; Author</span></strong><span>: </span>
+<span>The Seq2Seq model was introduced in 2014 by </span><mark><a href='https://www.cs.toronto.edu/~ilya/'><span>Ilya Sutskever</span></a><span>, Oriol Vinyals, and Quoc V. Le</span></mark><span> in their paper &quot;</span><em><span>Sequence to Sequence Learning with Neural Networks.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>: </span></p><ol start='' ><li><p><mark><span>Encoder</span></mark><span>: </span>
+<span>Processes the input sequence using an RNN or LSTM.</span></p><ul><li><p><span>The input sequence is passed through the encoder one token at a time.</span></p></li><li><p><span>The encoder updates its hidden state at each time step based on the current input token and the previous hidden state.</span></p></li><li><p><span>The final hidden state of the encoder becomes the context vector, which is a fixed-size representation of the input sequence. </span></p></li></ul></li><li><p><mark><span>Decoder</span></mark><span>:</span>
+<span>Generates the output sequence using an RNN or LSTM.</span></p><ul><li><p><span>The decoder starts with a special start-of-sequence (SOS) token as input and the context vector as its initial hidden state.</span></p></li><li><p><span>For each step, the decoder generates a probability distribution over the possible output tokens, selects the token with the highest probability, and then uses it as input for the next step.</span></p></li><li><p><span>The process continues until the decoder generates an end-of-sequence (EOS) token or reaches a predefined maximum output length. </span></p></li></ul></li><li><p><mark><span>Teacher forcing</span></mark><span>:</span>
+<span>The target output sequence is used as input to the decoder during training instead of the decoder&#39;s own predictions.</span></p></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<span>The main motivation behind Seq2Seq models was to enable the conversion of one sequence of data into another sequence, particularly for natural language processing tasks like machine translation and text summarization.</span></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><mark><span>Seq2Seq models can handle input and output sequences of varying lengths.</span></mark></p></li><li><p><span>They can learn complex mappings between input and output sequences and generalize well to unseen data when trained on large datasets.</span></p></li><li><p><mark><span>With the addition of </span><em><span>attention mechanisms</span></em><span>, Seq2Seq models can better handle long-range dependencies in the data.</span></mark></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><span>The basic Seq2Seq model relies on a single </span><em><strong><span>fixed-size context vector</span></strong></em><span>, which may lead to difficulty in capturing all the information in long input sequences.</span></p></li><li><p><mark><span>Training Seq2Seq models can be computationally intensive, especially for long sequences.</span></mark></p></li><li><p><mark><span>The model&#39;s performance can degrade when dealing with very long input sequences, as it may struggle to remember important information from the beginning of the sequence.</span></mark></p></li></ul></li></ol><p><img src="img/bottleneck-min.png" referrerpolicy="no-referrer" alt="img"></p><hr /><h2 id='seq2seq-with-attention'><span>Seq2Seq with Attention</span></h2><p><img src="img/general_scheme-min.png" referrerpolicy="no-referrer" alt="Seq2seq and Attention"></p><ol start='' ><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<span>The Seq2Seq with Attention model was introduced in 2015 by </span><mark><span>Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio</span></mark><span> in their paper &quot;</span><em><span>Neural Machine Translation by Jointly Learning to Align and Translate.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>:</span></p><ol start='' ><li><p><mark><span>Encoder</span></mark><span>:</span>
+<span>Similar to the standard Seq2Seq model, the encoder processes the input sequence using an RNN or LSTM.</span></p></li><li><p><mark><span>Attention mechanism</span></mark><span>:</span>
+<span>Computes a weight for each encoder hidden state based on the decoder&#39;s previous hidden state.</span></p><ul><li><p><span>The attention mechanism takes the decoder&#39;s previous hidden state and all encoder hidden states as input.</span></p></li></ul><ul><li><p><span>It computes a score for each encoder hidden state using a </span><em><mark><span>scoring function</span></mark></em><span> (e.g., dot product, additive, or multiplicative attention).</span></p></li><li><p><span>The scores are normalized using a softmax function, creating attention weights.</span></p></li><li><p><span>A weighted sum of the encoder hidden states is calculated using the attention weights, resulting in a context vector for the current decoding step.</span></p></li></ul></li><li><p><mark><span>Decoder</span></mark><span>:</span>
+<span>Generates the output sequence using an RNN or LSTM, but now with the context vector from the attention mechanism.</span></p><ul><li><p><span>The decoder&#39;s initial hidden state is still based on the encoder&#39;s final hidden state.</span></p></li><li><p><span>At each step, the decoder generates a probability distribution over the possible output tokens, selects the token with the highest probability, and then uses it as input for the next step.</span></p></li><li><p><span>The attention-based context vector is used as an additional input to the decoder at each step, guiding the decoder to focus on relevant parts of the input sequence.</span></p></li></ul></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<span>The main motivation behind Seq2Seq with Attention was to overcome the limitations of the basic Seq2Seq model, particularly its reliance on a single fixed-size context vector, which could struggle to capture all the information in long input sequences. </span><mark><span>The attention mechanism allows the model to dynamically focus on different parts of the input sequence during the decoding process.</span></mark></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><mark><span>Attention improves the model&#39;s ability to handle long-range dependencies and better capture the relationships between input and output tokens</span></mark><span>.</span></p></li><li><p><span>It provides </span><em><strong><span>interpretability</span></strong></em><span>, as the attention weights offer insights into which parts of the input sequence the model is focusing on at each decoding step.</span></p></li><li><p><span>Seq2Seq with Attention achieves better performance on various NLP tasks, such as machine translation and text summarization, compared to the basic Seq2Seq model.</span></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><mark><span>The addition of attention increases the computational complexity of the model, as it requires calculating attention weights and context vectors at each decoding step</span></mark><span>.</span></p></li><li><p><span>While the attention mechanism mitigates some of the issues related to capturing information in long sequences, it may still struggle with very long input sequences or suffer from overfitting in cases of limited training data.</span></p></li><li><p><span>Seq2Seq with Attention can still be outperformed by more advanced models like Transformers, which utilize self-attention mechanisms and can process input sequences in parallel.</span></p></li></ul></li></ol><p>&nbsp;</p><p><strong><span>How to compute attention score?</span></strong></p><p><img src="img/score_functions-min.png" referrerpolicy="no-referrer" alt="img"></p><ul><li><p><span>Original authors used last method - </span><em><span>Bahdanau attention</span></em><span> (MLP)</span></p></li><li><p><span>Bilinear function (aka </span><em><span>Luong attention</span></em><span>) - used in the paper &quot;</span><em><span>Effective approaches to Attention-based Neural Machine Translation</span></em><span>&quot;.</span></p></li></ul><p>&nbsp;</p><p><strong><span>Interpretability</span></strong></p><p><span>From </span><em><a href='https://arxiv.org/pdf/1409.0473.pdf'><span>Neural Machine Translation by Jointly Learning to Align and Translate</span></a><span>.</span></em></p><p><img src="img/bahdanau_examples-min.png" referrerpolicy="no-referrer" alt="img"></p><hr /><h2 id='transformer'><span>Transformer</span></h2><p><img src="img/transformer_original.gif" referrerpolicy="no-referrer" alt="img"></p><p style="text-align:center;font-size:small">The animation is from the <a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html">Google AI blog post</a></p><ol start='' ><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<span>The Transformer model was introduced in 2017 by Ashish Vaswani and his team in their paper &quot;</span><em><span>Attention is All You Need.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>:</span></p><ol start='' ><li><p><mark><span>Multi-head self-attention</span></mark><span>: </span>
+<span>Computes multiple sets of attention weights and context vectors </span><mark><span>in parallel</span></mark><span> for both the input and output sequences.</span></p><ul><li><p><span>Each attention head computes a set of attention weights by comparing input tokens with other input tokens (in the encoder) or output tokens with input tokens (in the decoder).</span></p></li><li><p><span>The attention weights are normalized using a softmax function, and a weighted sum of the input tokens is computed for each head, resulting in multiple context vectors.</span></p></li></ul></li><li><p><mark><span>Position-wise feed-forward networks</span></mark><span>:</span>
+<span>Applied independently to each token in the sequence after the multi-head self-attention layer.</span></p><ul><li><p><span>Consists of two dense (fully connected) layers with a ReLU activation function in between</span></p></li></ul></li><li><p><mark><span>Residual connections and layer normalization</span></mark><span>:</span>
+<span>Applied after both the multi-head self-attention and position-wise feed-forward layers to stabilize training and improve generalization.</span></p><ul><li><p><span>The output of each sub-layer is combined with its input through an element-wise addition (residual connection) and then normalized using layer normalization.</span></p></li></ul></li><li><p><mark><span>Positional encoding</span></mark><span>:</span>
+<span>Injects positional information into the model, as the self-attention mechanism is not sensitive to token order.</span></p><ul><li><p><span>The positional encoding is added to the input token embeddings before being passed to the first layer of the model.</span></p></li></ul></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<span>The main motivation behind the Transformer model was to address the limitations of RNNs and LSTMs in handling long sequences and long-range dependencies by leveraging self-attention mechanisms, which allow for parallel processing of the entire input sequence and a more efficient computation.</span></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><span>Transformers can process input sequences in </span><em><strong><span>parallel</span></strong></em><span>, resulting in faster training and inference compared to sequential models like RNNs and LSTMs.</span></p></li><li><p><span>The self-attention mechanism allows Transformers to better handle long-range dependencies and capture the relationships between input and output tokens.</span></p></li><li><p><span>Transformers have achieved state-of-the-art performance on various NLP tasks, including machine translation, text summarization, and question-answering systems.</span></p></li><li><p><span>They have become the foundation for many advanced models like BERT and GPT, which have further improved the performance of NLP applications.</span></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><span>Transformers can have high memory requirements due to the self-attention mechanism&#39;s quadratic complexity with respect to the input sequence length, making it difficult to process very long sequences.</span></p></li><li><p><mark><span>The large number of parameters in Transformer models</span></mark><span>, especially in pre-trained variants like BERT and GPT, can result in increased memory consumption and longer training times.</span></p></li><li><p><span>Transformers may require large-scale training data to achieve optimal performance, and the absence of recurrent layers means they rely heavily on positional encoding to capture the order of tokens in the input sequence.</span></p></li></ul></li></ol><p>&nbsp;</p><p><strong><span>Self-attention</span></strong></p><p><img src="img/qkv_explained-min.png" referrerpolicy="no-referrer" alt="img"></p><p><img src="img/qkv_attention_formula-min.png" alt="img" style="zoom: 33%;" /></p><p>&nbsp;</p><p><strong><span>Masked self-attention</span></strong></p><p><img src="img/masked_self_attn.gif" referrerpolicy="no-referrer" alt="masked_self_attn"></p><p>&nbsp;</p><p><strong><span>Architecture</span></strong></p><p><img src="img/model-min.png" referrerpolicy="no-referrer" alt="img"></p><ol start='' ><li><p><strong><span>Encoder</span></strong><span>:</span></p><ul><li><p><em><span>Input Embeddings</span></em><span>: </span>
+<span>The input tokens are first converted into continuous vectors using token embeddings.</span></p></li><li><p><em><span>Positional Encoding</span></em><span>: </span>
+<span>Positional information is added to the input embeddings using a fixed positional encoding function, ensuring that the model can recognize the order of tokens in the sequence.</span></p></li><li><p><em><span>Encoder Layers</span></em><span>: </span>
+<span>The encoder is composed of a stack of identical layers. Each layer consists of two primary sub-layers: multi-head self-attention and position-wise feed-forward networks. a. Multi-Head Self-Attention: This sub-layer computes attention over the input sequence for multiple heads in parallel. For each head, it calculates attention weights by comparing each input token with all other input tokens. The weights are then used to compute a weighted sum of the input tokens, resulting in context vectors. The context vectors from all heads are concatenated and passed through a linear projection layer. b. Position-Wise Feed-Forward Networks: This sub-layer consists of two dense layers with a ReLU activation function in between, applied independently to each token in the sequence. c. Residual Connections and Layer Normalization: After each sub-layer, a residual connection (element-wise addition) and layer normalization are applied to stabilize training and improve generalization.</span></p></li></ul></li><li><p><strong><span>Decoder</span></strong><span>:</span></p><ul><li><p><em><span>Output Embeddings</span></em><span>:</span>
+<span>Similar to the input embeddings, output tokens are converted into continuous vectors using token embeddings.</span></p></li><li><p><em><span>Positional Encoding</span></em><span>:</span>
+<span>Positional information is added to the output embeddings, just like in the encoder.</span></p></li><li><p><em><span>Decoder Layers</span></em><span>:</span>
+<span>The decoder is also composed of a stack of identical layers. Each layer consists of three primary sub-layers: masked multi-head self-attention, encoder-decoder attention, and position-wise feed-forward networks.</span></p><ul><li><p><mark><span>Masked Multi-Head Self-Attention</span></mark><span>:</span>
+<span>This sub-layer is similar to the one in the encoder but uses a masking mechanism to ensure that the attention mechanism only considers the current and previous output tokens during the decoding process.</span></p></li><li><p><mark><span>Encoder-Decoder Attention</span></mark><span>:</span>
+<span>This sub-layer computes attention over the encoder&#39;s output, allowing the decoder to focus on relevant parts of the input sequence. It uses the same multi-head attention mechanism but with the decoder&#39;s hidden states as queries and the encoder&#39;s hidden states as keys and values.</span></p></li><li><p><span>Position-Wise Feed-Forward Networks, Residual Connections, and Layer Normalization: These components are the same as those in the encoder layers.</span></p></li></ul></li><li><p><em><span>Output Layer</span></em><span>:</span>
+<span>The final step in the decoder is a linear projection layer that maps the hidden states back to the vocabulary size, followed by a softmax layer to compute the probabilities of each token in the output sequence.</span></p></li></ul></li></ol><p>&nbsp;</p><p><strong><span>Is a large number of parameters (overparametrized) really a disadvantage?</span></strong></p><p style="text-align:right;font-size:small">Althea Power et al., <i>Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets</i> <a href="https://arxiv.org/abs/2201.02177">[arXiv: 2201.02177]</a></p><p><img src="img/image-20230406100248345.png" referrerpolicy="no-referrer" alt="image-20230406100248345"></p><p>&nbsp;</p><p style="text-align:right;font-size:small"><i>Characterizing Emergent Phenomena in Large Language Models</i>, <a href="https://ai.googleblog.com/2022/11/characterizing-emergent-phenomena-in.html">Google AI Blog</a></p><p><img src="img/image4.png" referrerpolicy="no-referrer" alt="img"></p><p>&nbsp;</p><hr /><h2 id='llm-history'><span>LLM History</span></h2><p style="text-align:right;font-size:small">Timeline History of Large Language Models, <a href="https://voicebot.ai/large-language-models-history-timeline/">Voicebot.ai</a></p><p><img src="img/llm-timeline2.27.23-1.png" referrerpolicy="no-referrer" alt="img"></p><hr /><h2 id='gpt'><span>GPT</span></h2><p><img src="img/image-20230406104306263.png" referrerpolicy="no-referrer" alt="image-20230406104306263"></p><ol><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<strong><span>GPT</span></strong><span>(Generative Pre-trained Transformer) was introduced in 2018 by Alec Radford and his team at OpenAI in their paper &quot;</span><em><span>Improving Language Understanding by Generative Pre-Training.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>:</span></p><ol><li><p><span>Pre-training:</span>
+<mark><span>GPT is pre-trained on large corpora using unsupervised learning</span></mark><span>, leveraging a </span><em><span>unidirectional</span></em><span> (left-to-right) Transformer architecture.</span></p><ul><li><p><span>Language Modeling: GPT is trained to </span><mark><span>predict the next token in a sequence</span></mark><span> given the preceding tokens, effectively learning to generate text that resembles the training data.</span></p></li><li><p><span>Due to its unidirectional nature, GPT learns context representations only from the left context (preceding tokens) during pre-training.</span></p></li></ul></li><li><p><span>Fine-tuning:</span>
+<span>After the pre-training phase, GPT can be fine-tuned on specific tasks, such as text classification, question-answering, or text generation.</span></p></li><li><p><span>To adapt GPT to a specific task, a task-specific output layer is added to the pre-trained GPT model, and the entire model is fine-tuned using labeled data from the target task.</span></p></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<span>The main motivation behind GPT was to create a pre-trained model that can be easily fine-tuned on various NLP tasks, taking advantage of the powerful Transformer architecture and unsupervised learning on large-scale datasets. This approach enables the model to generalize well and achieve high performance across a wide range of tasks.</span></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><span>GPT leverages unsupervised pre-training on large datasets, enabling the model to learn rich language representations and improve performance on various NLP tasks.</span></p></li><li><p><span>It can be easily fine-tuned for specific tasks with relatively small labeled datasets, saving time and resources compared to training large models from scratch.</span></p></li><li><p><span>GPT has demonstrated strong performance on several NLP benchmarks and tasks, such as language modeling, text classification, and question-answering.</span></p></li><li><p><span>Its generative nature makes it well-suited for tasks involving text generation, such as summarization or machine translation.</span></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><span>GPT has a large number of parameters, which can lead to increased memory consumption, longer training times, and high computational resource requirements.</span></p></li><li><p><mark><span>The unidirectional context in GPT limits its ability to capture bidirectional relationships between words, which can be a disadvantage compared to bidirectional models like BERT.</span></mark></p></li><li><p><span>GPT&#39;s pre-training phase can be computationally expensive and time-consuming due to its large size. However, users can often leverage pre-trained GPT models provided by the research community or companies like OpenAI and fine-tune them for specific tasks, bypassing the pre-training step.</span></p></li></ul></li></ol><hr /><h2 id='bert'><span>BERT</span></h2><p><img src="img/img.png" referrerpolicy="no-referrer" alt="img"></p><ol><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<strong><span>BERT</span></strong><span>(Bidirectional Encoder Representations from Transformers) was introduced in 2018 by Jacob Devlin and his team at Google AI Language in their paper &quot;</span><em><span>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>: </span></p><ol><li><p><span>Pre-training:</span>
+<mark><span>BERT is pre-trained on large corpora using unsupervised learning with two objectives</span></mark><span>: </span><em><span>masked language modeling</span></em><span> and </span><em><span>next sentence prediction</span></em><span>.</span></p><ul><li><p><em><strong><span>Masked Language Modeling</span></strong><span> (MLM)</span></em><span>:</span>
+<mark><span>Randomly masks a percentage of tokens in the input sequence, and the model is trained to predict the masked tokens based on the context provided by the non-masked tokens.</span></mark><span> This allows BERT to learn a </span><em><span>bidirectional representation</span></em><span> of the input sequence.</span></p></li><li><p><em><strong><span>Next Sentence Prediction</span></strong><span> (NSP)</span></em><span>:</span>
+<mark><span>BERT is trained to predict whether a sentence comes immediately after another given sentence.</span></mark><span> This task helps the model to learn relationships between sentences and understand sentence pairs&#39; coherence.</span></p></li></ul></li><li><p><mark><span>Fine-tuning</span></mark><span>: </span>
+<span>After the pre-training phase, BERT can be fine-tuned on specific tasks, such as </span><mark><span>text classification, question-answering, or named entity recognition</span></mark><span>.</span></p></li><li><p><span>To adapt BERT to a specific task, a task-specific output layer is added to the pre-trained BERT model, and the entire model is fine-tuned using labeled data from the target task.</span></p></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<mark><span>The main motivation behind BERT was to create a pre-trained model that can be easily fine-tuned on various NLP tasks while leveraging the power of bidirectional context and unsupervised learning.</span></mark><span> This approach enables the model to generalize well and achieve state-of-the-art performance across a wide range of tasks.</span></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><mark><span>BERT captures bidirectional context, allowing the model to better understand the relationships between words and sentences.</span></mark></p></li><li><p><span>It leverages </span><em><strong><span>unsupervised pre-training</span></strong></em><span> on large datasets, which enables the model to learn rich language representations and improve performance on various NLP tasks.</span></p></li><li><p><span>BERT can be </span><em><strong><span>easily fine-tuned</span></strong></em><span> for specific tasks with relatively small labeled datasets, saving time and resources compared to training large models from scratch.</span></p></li><li><p><span>BERT has achieved state-of-the-art performance on numerous NLP benchmarks, including GLUE, SQuAD, and SWAG.</span></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><span>BERT has a large number of parameters, which can lead to increased memory consumption, longer training times, and high computational resource requirements.</span></p></li><li><p><span>The model may be overkill for some simpler tasks or when working with limited training data, as smaller models might perform comparably with lower resource demands.</span></p></li><li><p><span>BERT&#39;s pre-training phase can be computationally expensive and time-consuming due to its large size and bidirectional training approach. However, users can often leverage pre-trained BERT models provided by the research community or companies like Google and fine-tune them for specific tasks, bypassing the pre-training step.</span></p></li></ul></li></ol><hr /><h2 id='gpt-3'><span>GPT-3</span></h2><p><img src="img/image-20230406104941167.png" referrerpolicy="no-referrer" alt="image-20230406104941167"></p><ol><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<span>GPT-3 was introduced in 2020 by Tom B. Brown and his team at OpenAI in their paper &quot;</span><em><span>Language Models are Few-Shot Learners.</span></em><span>&quot;</span></p></li><li><p><strong><span>Briefly describe algorithms step-by-step. Also describe techniques that original authors used</span></strong><span>:</span></p><ol><li><p><span>Pre-training:</span>
+<span>GPT-3 is pre-trained on large corpora using unsupervised learning, leveraging a unidirectional (left-to-right) Transformer architecture, similar to its predecessor GPT-2.</span></p><ul><li><p><span>Language Modeling: GPT-3 is trained to predict the next token in a sequence given the preceding tokens, effectively learning to generate text that resembles the training data.</span></p></li><li><p><span>The most significant difference between GPT-3 and previous versions is the massive scale of the model. GPT-3 consists of </span><mark><span>175 billion parameters</span></mark><span>, making it one of the largest language models ever created. </span></p></li></ul></li><li><p><mark><span>Fine-tuning and Few-Shot Learning</span></mark><span>:</span>
+<span>GPT-3&#39;s main innovation is its ability to perform well on various NLP tasks with minimal task-specific fine-tuning, using few-shot or even zero-shot learning.</span></p><ul><li><p><span>Instead of explicitly fine-tuning GPT-3 on a specific task, </span><mark><span>the model is given a text prompt that includes examples of the desired task (few-shot learning) or a description of the task (zero-shot learning)</span></mark><span>. GPT-3 then generates text that satisfies the given task requirements.</span></p></li></ul></li></ol></li><li><p><strong><span>Main motivation</span></strong><span>:</span>
+<span>The main motivation behind GPT-3 was to push the limits of pre-training and demonstrate that a sufficiently large language model can perform a wide variety of tasks without explicit fine-tuning, </span><mark><span>using few-shot or zero-shot learning</span></mark><span>.</span></p></li><li><p><strong><span>Pros</span></strong><span>:</span></p><ul><li><p><span>GPT-3 leverages its massive scale to learn rich language representations, leading to impressive performance on various NLP tasks, even without explicit fine-tuning.</span></p></li><li><p><span>It can perform well using few-shot or zero-shot learning, making it more adaptable to new tasks with limited labeled data.</span></p></li><li><p><span>GPT-3 has demonstrated strong performance on several NLP benchmarks and tasks, such as language modeling, text classification, question-answering, and text generation.</span></p></li><li><p><span>Its generative nature makes it well-suited for tasks involving text generation, such as summarization, machine translation, or creative writing.</span></p></li></ul></li><li><p><strong><span>Cons</span></strong><span>:</span></p><ul><li><p><span>GPT-3 has a large number of parameters, which can lead to increased memory consumption, longer training times, and high computational resource requirements.</span></p></li><li><p><span>The unidirectional context in GPT-3 limits its ability to capture bidirectional relationships between words, which can be a disadvantage compared to bidirectional models like BERT.</span></p></li><li><p><span>GPT-3&#39;s pre-training phase can be computationally expensive and time-consuming due to its massive size.</span></p></li><li><p><span>The large-scale nature of GPT-3 also raises concerns about its environmental impact, as training such a model consumes significant amounts of energy.</span></p></li><li><p><span>GPT-3 might generate text that is coherent but factually incorrect, biased, or inappropriate, as it learns from potentially biased and noisy data sources present in the training data.</span></p></li></ul></li></ol><hr /><h2 id='palm'><span>PaLM</span></h2><p><img src="img/모델이-커질수록-다양한-태스크를-수행할-수-있는-능력이-커집니다..gif" referrerpolicy="no-referrer" alt="모델이 커질수록 다양한 태스크를 수행할 수 있는 능력이 커집니다."></p><p><img src="img/image-20230406111128517.png" referrerpolicy="no-referrer" alt="image-20230406111128517"></p><ol><li><p><strong><span>Published year &amp; Author</span></strong><span>:</span>
+<strong><span>PaLM</span></strong><span>(Pathways Language Models) was introduced in 2022 by Aakanksha Chowdhery and her team at Google Research in their paper &quot;</span><em><span>PaLM: Scaling Language Modeling with Pathways</span></em><span>&quot;.</span></p></li><li><p><strong><span>Main motivation</span></strong><span> (by ChatPDF) :</span>
+<span>The main motivation behind PaLM is to develop a large-scale, modularized system that can achieve broad generalization capabilities across multiple modalities. PaLM is a </span><em><strong><span>540-billion</span></strong></em><span> parameter, densely activated, Transformer language model that has been trained to achieve remarkable performance across a variety of natural language tasks using few-shot learning. The goal of this approach is to drastically reduce the number of task-specific training examples needed to adapt the model to a particular application, making it more efficient and effective than traditional language modeling approaches. By achieving state-of-the-art performance across both natural language and code tasks in a single model, PaLM represents a significant step forward in the field of natural language processing and machine learning. You can find more information about the motivation behind PaLM on </span><em><span>page 50</span></em><span> of this PDF.</span></p></li><li><p><strong><span>Pros</span></strong><span> (by ChatPDF) :</span></p><ol><li><p><span>Few-shot learning:</span>
+<span>PaLM is trained using few-shot learning, which drastically reduces the number of task-specific training examples needed to adapt the model to a particular application. This makes it more efficient and effective than traditional language modeling approaches.</span></p></li><li><p><span>Large-scale:</span>
+<span>PaLM is a 540-billion parameter, densely activated, Transformer language model, making it one of the largest language models ever developed. This large scale allows it to achieve state-of-the-art performance across both natural language and code tasks in a single model.</span></p></li><li><p><span>Generalization:</span>
+<span>PaLM has broad generalization capabilities across multiple modalities, meaning that it can be applied to a wide range of natural language tasks with high accuracy.</span></p></li><li><p><span>State-of-the-art performance:</span>
+<span>PaLM achieves outstanding few-shot performance, achieving state-of-the-art results on 28 out of the 29 most widely evaluated English NLP tasks when compared to the best per-task result from any previous large language model. </span></p></li></ol></li></ol><p>&nbsp;</p><p><strong><span>Chain-of-thought</span></strong></p><p><img src="img/초등학교-수학-문제를-chain-of-thougt를-사용하여-해결하는-PaLM-1024x587.png" referrerpolicy="no-referrer" alt="초등학교 수학 문제를 chain-of-thougt를 사용하여 해결하는 PaLM"></p><p><img src="img/2-shot-프롬프트로-농담을-설명하는-PaLM-1024x618.png" referrerpolicy="no-referrer" alt="2 shot 프롬프트로 농담을 설명하는 PaLM"></p><p>&nbsp;</p><p><strong><span>PaLM-Coder</span></strong></p><p><img src="img/PaLM-DeepFix-Code-수정-태스크-1024x336.png" referrerpolicy="no-referrer" alt="PaLM-DeepFix Code 수정 태스크"></p><hr /><h2 id='references'><span>References</span></h2><h3 id='images'><span>Images</span></h3><ul><li><p><span>Image of Seq2Seq with Attention &amp; Transformer : </span><a href='https://lena-voita.github.io/nlp_course/seq2seq_and_attention.html'><span>Lena Voita</span></a></p></li><li><p><span>Images of transfomer : Google AI Blog</span></p></li><li><p><span>Images of Timeline in LLM : </span><a href='https://voicebot.ai/large-language-models-history-timeline/'><span>Voicebot.ai</span></a></p></li><li><p><span>Images of PaLM : </span><a href='https://modulabs.co.kr/blog/nlp-ai-model-palm/'><span>ModuLabs</span></a></p></li></ul><h3 id='papers'><span>Papers</span></h3><ul><li><p><span>Ilya Sutskever, Oriol Vinyals, Quoc V. Le, </span><em><span>Sequence to Sequence Learning with Neural Networks</span></em><span>, </span><a href='https://arxiv.org/abs/1409.3215'><span>arXiv:1409.3215</span></a></p></li></ul><ul><li><p><span>Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio, </span><em><span>Neural Machine Translation by Jointly Learning to Align and Translate</span></em><span>, </span><a href='https://arxiv.org/abs/1409.0473'><span>arXiv: 1409.0473</span></a></p></li><li><p><span>Ashish Vaswani et al., </span><em><span>Attention is All you Need</span></em><span>, </span><a href='https://arxiv.org/abs/1706.03762'><span>arXiv: 1706.03762</span></a></p></li><li><p><span>Althea Power et al., </span><i><span>Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets</span></i><span>, </span><a href='https://arxiv.org/abs/2201.02177'><span>arXiv: 2201.02177</span></a></p></li><li><p><span>Radford, A., Narasimhan, K., Salimans, T., and Sutskever, I., </span><em><span>Improving language understanding by generative pre-training</span></em><span>, 2018</span></p></li><li><p><span>Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova, </span><em><span>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</span></em><span>, </span><a href='https://arxiv.org/abs/1810.04805'><span>arXiv: 1810.04805</span></a></p></li><li><p><span>Tom B. Brown et al., </span><em><span>Language Models are Few-Shot Learners.</span></em><span>, </span><a href='https://arxiv.org/abs/2005.14165'><span>arXiv:2005.14165</span></a></p></li><li><p><span>Aakanksha Chowdhery et al., </span><em><span>PaLM: Scaling Language Modeling with Pathways</span></em><span>, </span><a href='https://arxiv.org/abs/2204.02311'><span>arXiv: 2204.02311</span></a></p></li></ul></div></div>
+</body>
+</html>
